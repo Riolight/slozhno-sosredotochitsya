@@ -1,5 +1,383 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--main-font, Helvetica, Arial, sans-serif);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-size: 18px;
+}
+
+.header__theme-menu-list {
+  margin-block-start: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  gap: 10px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.header__theme-menu-button {
+  padding-block-end: 4px;
+  color: var(--decor-color);
+  font-family: inherit;
+  text-transform: lowercase;
+  line-height: 18px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 70px;
+  height: 26px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--color-hover);
+  border-color: 40%;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  border-bottom: 1px solid var(--decor-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--decor-color);
+  pointer-events: none;
+}
+
+.header__decorated-text {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  color: var(--decor-color);
+  font-family: inherit;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+
+.header span::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -20px;
+  width: 9px;
+  border-radius: 50%;
+  height: 9px;
+  background-color: var(--decor-color);
+  box-shadow: 0px 0px 4px 2px var(--decor-color);
+}
+
+.decor-element::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+}
+
+.decor-element::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+}
+
+.content-title {
+  display: grid;
+  grid-template-rows: minmax(50vh, 1fr);
+  align-items: end;
+  color: var(--accent-color);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-family: inherit;
+  font-weight: bold;
+  text-shadow: 4px 4px 0 var(--accent-background-color);
+  line-height: 82.5%;
+}
+
+.title-decor {
+  margin-block-end: 10px;
+  background-color: var(--accent-background-color);
+  font-family: inherit;
+  color: var(--title-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.quote {
+  max-width: 491px;
+}
+
+.content__blockquote {
+  display: grid;
+  grid-template-rows: minmax(45vh, 1fr);
+  align-items: center;
+  justify-items: end;
+  margin-inline: 20px;
+  margin-block: 0 60px;
+  font-weight: bold;
+}
+
+.theme_light.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  clip: rect(
+    0 0 0 0
+  ); /* это свойство обрезает видимую область до нулевого значения */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+}
+
+.content__title-block {
+  display: grid;
+  grid-template-columns: minmax(355px, 1fr) 2fr; 
+  align-items: start;
+  gap: 20px;
+  line-height: 23.4px;
+}
+
+.content__text-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  color: var(--color);
+}
+
+.content__inline-padding {
+  margin-inline: 20px;
+}
+
+.title-padding {
+  margin-block-end: 20px;
+}
+
+.content__blok-padding:not(:last-of-type) {
+  margin-block-end: 80px;
+}
+
+.title-block {
+  color: var(--decor-color);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content__text-block .text-block:not(:last-of-type) {
+  margin-block: 0 20px;
+}
+
+.content__title-block .content__text-block .text-block a {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-background-color);
+}
+
+.subtitle-block {
+  font-weight: normal;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+img:first-of-type {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+img:nth-of-type(2) {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+
+img:nth-of-type(3) {
+  grid-column: 1/2;
+  grid-row: 2/5;
+}
+
+img:nth-of-type(4) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+img:nth-of-type(5) {
+  grid-column: 2/4;
+  grid-row: 3/5;
+}
+
+@media (768px <= width < 1024px) {
+  .header__theme-menu-list {
+    grid-template: none;
+    justify-content: end;
+    margin-block-start: 192px;
+    margin-inline: 20px;
+  }
+
+  .content__title-block {
+    grid-template-columns: minmax(315px, 1fr) 2fr; 
+  }
+}
+
+@media (375px <= width < 768px) {
+  .content__title-block {
+    grid-template-columns: minmax(236px, 1fr) 2fr; 
+  }
+}
+
+@media (375px <= width < 768px) {
+  .header__theme-menu-list {
+    grid-template: none;
+    justify-content: end;
+    margin-block-start: 75px;
+    margin-inline: 10px;
+  }
+
+  .content__title-block {
+    grid-template-columns: repeat(auto-fill, minmax(355px, 1fr)); 
+    gap: 0;
+    margin-inline: 10px;
+  }
+
+  .content__blockquote {
+    margin-inline: 10px;
+  }
+
+  .content__inline-padding {
+    margin-inline: 10px;
+  }
+
+  .content__blok-padding:not(:last-of-type) {
+    margin-block-end: 50px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+img:first-of-type {
+  grid-column: 1/5;
+  grid-row: 1/2;
+}
+
+img:nth-of-type(2) {
+  grid-column: 1/5;
+  grid-row: 2/3;
+}
+
+img:nth-of-type(3) {
+  grid-column: 1/5;
+  grid-row: 3/4;
+}
+
+img:nth-of-type(4) {
+  grid-column: 1/5;
+  grid-row: 4/5;
+}
+
+img:nth-of-type(5) {
+  grid-column: 1/5;
+  grid-row: 5/6;
+}
+
+.title-padding-mobile {
+  margin-block-end: 10px;
+}
+
+}
+
+@media (375px >= width) {
+  .header__theme-menu-list {
+    grid-template: none;
+    justify-content: end;
+    margin-block-start: 75px;
+    margin-inline: 10px;
+  }
+
+  .header__theme-menu-list {
+    grid-template: none;
+    justify-content: end;
+    margin-block-start: 75px;
+    margin-inline: 10px;
+  }
+
+  .content__title-block {
+    grid-template-columns: repeat(auto-fill, minmax(355px, 1fr)); 
+    gap: 0;
+    margin-inline: 10px;
+  }
+
+  .content__blockquote {
+    margin-inline: 10px;
+  }
+
+  .content__inline-padding {
+    margin-inline: 10px;
+  }
+
+  .content__blok-padding:not(:last-of-type) {
+    margin-block-end: 50px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+img:first-of-type {
+  grid-column: 1/5;
+  grid-row: 1/2;
+}
+
+img:nth-of-type(2) {
+  grid-column: 1/5;
+  grid-row: 2/3;
+}
+
+img:nth-of-type(3) {
+  grid-column: 1/5;
+  grid-row: 3/4;
+}
+
+img:nth-of-type(4) {
+  grid-column: 1/5;
+  grid-row: 4/5;
+}
+
+img:nth-of-type(5) {
+  grid-column: 1/5;
+  grid-row: 5/6;
+}
+
+.title-padding-mobile {
+  margin-block-end: 10px;
+}
+
 }

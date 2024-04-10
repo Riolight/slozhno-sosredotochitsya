@@ -3,6 +3,15 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+:root.theme-dark {
+  --accent-color: #DB00FF;
+  --color-hover: rgba(255, 0, 112, 0.40);
+  --decor-color: #FF0070;
+  --color: #F1B2CE;
+  --background-color: #000028;
+  --accent-background-color: #FF0070;
+  --background-image: url(../images/cover-image-dark.png);
+}
 
 .page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
@@ -10,3 +19,4 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+
