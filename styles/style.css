@@ -95,11 +95,14 @@ button:focus-visible {
   border-left: 1px solid var(--decor-color);
 }
 
-.content-title {
+.content__title {
   display: grid;
-  grid-template-rows: minmax(50vh, 1fr);
+  grid-template-rows: minmax(52vh, 1fr);
   align-items: end;
-  color: var(--accent-color);
+}
+
+.content__title-decoration {
+color: var(--accent-color);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-family: inherit;
   font-weight: bold;
@@ -116,76 +119,74 @@ button:focus-visible {
   font-size: 18px;
 }
 
-.quote {
+.content__blockquote_quote {
   max-width: 491px;
 }
 
 .content__blockquote {
   display: grid;
-  grid-template-rows: minmax(45vh, 1fr);
+  grid-template-rows: minmax(41vh, 1fr);
   align-items: center;
   justify-items: end;
   margin-inline: 20px;
-  margin-block: 0 60px;
+  margin-block: 0 68px;
   font-weight: bold;
 }
 
-.theme_light.visually-hidden {
-  position: absolute; /* элемент вырывают из потока */
-  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
-  height: 1px;
-  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
-  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
-  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
-  clip: rect(
-    0 0 0 0
-  ); /* это свойство обрезает видимую область до нулевого значения */
-  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
-}
-
-.content__title-block {
+.content__block {
   display: grid;
-  grid-template-columns: minmax(355px, 1fr) 2fr; 
+  grid-template-columns: minmax(315px, 1fr) 2fr; 
   align-items: start;
   gap: 20px;
   line-height: 23.4px;
-}
-
-.content__text-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  color: var(--color);
-}
-
-.content__inline-padding {
   margin-inline: 20px;
-}
-
-.title-padding {
-  margin-block-end: 20px;
-}
-
-.content__blok-padding:not(:last-of-type) {
   margin-block-end: 80px;
 }
 
-.title-block {
+.content__block_title {
   color: var(--decor-color);
   font-size: 18px;
   font-weight: bold;
 }
 
-.content__text-block .text-block:not(:last-of-type) {
+.block_title {
+  margin-block-end: 20px;
+}
+
+.short {
+  grid-row: 1 / 3;
+}
+
+.long {
+  grid-row: 1 / 6;
+}
+
+.column {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.content__block_text {
+  display: grid;
+  grid-template-columns: 1fr;
+  color: var(--color);
+}
+
+.content__block_text .text:not(:last-of-type) {
   margin-block: 0 20px;
 }
 
-.content__title-block .content__text-block .text-block a {
+.content__block_text .text a {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-background-color);
 }
 
-.subtitle-block {
+.content__block_subtitle {
   font-weight: normal;
+}
+
+.block_gallery {
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 .gallery {
@@ -228,6 +229,13 @@ img:nth-of-type(5) {
   grid-row: 3/5;
 }
 
+.footer {
+  display: grid;
+  grid-template-rows: minmax(100vh, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
 @media (768px <= width < 1024px) {
   .header__theme-menu-list {
     grid-template: none;
@@ -236,13 +244,13 @@ img:nth-of-type(5) {
     margin-inline: 20px;
   }
 
-  .content__title-block {
+  .content__block_title {
     grid-template-columns: minmax(315px, 1fr) 2fr; 
   }
 }
 
 @media (375px <= width < 768px) {
-  .content__title-block {
+  .content__block_title {
     grid-template-columns: minmax(236px, 1fr) 2fr; 
   }
 }
@@ -255,17 +263,13 @@ img:nth-of-type(5) {
     margin-inline: 10px;
   }
 
-  .content__title-block {
+  .content__block_title {
     grid-template-columns: repeat(auto-fill, minmax(355px, 1fr)); 
     gap: 0;
     margin-inline: 10px;
   }
 
   .content__blockquote {
-    margin-inline: 10px;
-  }
-
-  .content__inline-padding {
     margin-inline: 10px;
   }
 
@@ -326,17 +330,13 @@ img:nth-of-type(5) {
     margin-inline: 10px;
   }
 
-  .content__title-block {
+  .content__block_title {
     grid-template-columns: repeat(auto-fill, minmax(355px, 1fr)); 
     gap: 0;
     margin-inline: 10px;
   }
 
   .content__blockquote {
-    margin-inline: 10px;
-  }
-
-  .content__inline-padding {
     margin-inline: 10px;
   }
 
