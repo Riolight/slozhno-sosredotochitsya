@@ -13,19 +13,19 @@
   --background-color: #FFF1F7;
   --accent-background-color: #FF8DCB;
   --background-image: url(../images/cover-image-light.png);
+  --decorated-text-color: #FFF1F7;
 }
 
 .page.theme_light {
-  background-color: #FFF1F7;
-  background-image: url(../images/cover-image-light.png);
-}
-
-.header__theme-menu-button.theme_light {
-  color: #353430;
-}
-
-.header__theme-menu-button:hover.theme_light {
-  border: 1px solid rgba(50, 49, 45, 0.40);
+  --accent-color: #FFC2E6;
+  --color-hover: rgba(50, 49, 45, 0.40);
+  --decor-color: #353430;
+  --color: #353430;
+  --title-color: #353430;
+  --background-color: #FFF1F7;
+  --accent-background-color: #FF8DCB;
+  --background-image: url(../images/cover-image-light.png);
+  --decorated-text-color: #FFF1F7;
 }
 
 @media (prefers-color-scheme: light) {
@@ -37,18 +37,6 @@
     --background-color: #FFF1F7;
     --accent-background-color: #FF8DCB;
     --background-image: url(../images/cover-image-light.png);
+    --decorated-text-color: #FFF1F7;
     }
 } 
-
-@media (prefers-color-scheme: light) {
-.visually-hidden {
-  position: absolute; /* элемент вырывают из потока */
-  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
-  height: 1px;
-  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
-  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
-  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
-  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
-  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
-  }
-}
