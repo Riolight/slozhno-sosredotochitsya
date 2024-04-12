@@ -16,6 +16,8 @@
     <title>Сложно сосредоточиться</title>
   </head>
   <body class="page">
+    <main class="content">
+      <div class="content__title decor-element">
     <header class="header decorated-zone">
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
@@ -43,10 +45,9 @@
           </li>
         </ul>
       </nav>
-      <span class="header__decorated-text visually-hidden" aria-hidden="true">rec</span>
     </header>
-    <main class="content">
-      <h1 class="content__title content__title-decoration">
+      <span class="decorated-text visually-hidden" aria-hidden="true">rec</span>
+      <h1 class="content__title-decoration title">
         no focus
       </h1>
       <blockquote class="content__blockquote">
@@ -55,9 +56,9 @@
           Или почему нам так сложно сконцентрироваться, особенно когда очень надо
         </p>
       </blockquote>
-      <span class="decor-element" aria-hidden="true"></span>
+      </div>
       <div class="content__block">
-        <h2 class="content__block_title short">Почему сосредоточиться так сложно</h2>
+        <h2 class="content__block_title short">Почему сосредоточиться так <br>сложно</h2>
         <div class="content__block_text">
           <h3 class="content__block_subtitle title-decor">Многозадачность</h3>
             <p class="text">
@@ -105,13 +106,12 @@
             </p>
         </div>
       </div>
-    </div>
 
 
       <div class="content__block">
         <h2 class="content__block_title long">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)</h2>
         <div class="content__block_text">
-          <h3 class="title-decor">5 простых (на самом деле не очень) советов</h3>
+          <h3 class="content__block_title-subtitle title-decor">5 простых (на самом деле не очень) советов</h3>
           <h3 class="content__block_subtitle title-decor">Представьте небо и облака</h3>
             <p class="text">
               Или листья в ручье. Тут дело в лёгкой медитации, которая помогает успокоиться. Ведь часто именно тревожные мысли о сложных задачах как раз и мешают эти сложные задачи делать. В такие моменты можно закрыть 
@@ -151,7 +151,7 @@
 
       <div class="content__block block_gallery">
         <h3 class="content__block_subtitle title-decor">А можно в картинках?</h3>
-        <gallery class="gallery">
+        <div class="gallery">
           <img 
             loading="lazy"
             src="./images/sunset.png"
@@ -177,14 +177,15 @@
           src="./images/street.png"
           alt=""
           >
-        </gallery> 
+        </div> 
       </div>
     </main>
-    <footer class="footer">
-      <p class="content__title-decoration">
+    <footer class="footer decor-element">
+      <div class="title">
+      <h4 class="content__title-decoration text-shadow">
         focus
-      </p>
-      <span class="decor-element" aria-hidden="true"></span>
+      </h4>
+    </div>
     </footer>
     <script src="./scripts/script.js"></script>
   </body>
