@@ -11,6 +11,10 @@
   font-size: 18px;
 }
 
+.header {
+min-height: 100vh;
+}
+
 .header__theme-menu-list {
   margin-block-start: 20px;
   display: grid;
@@ -98,7 +102,7 @@ button:focus-visible {
   position: relative;
   display: grid;
   grid-template-rows: 42vh 1fr 49vh;
-  height: 100vh;
+  max-height: 100vh;
   margin-block-end: 60px;
 }
 
@@ -249,7 +253,7 @@ img:nth-of-type(5) {
   grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .text-shadow {
