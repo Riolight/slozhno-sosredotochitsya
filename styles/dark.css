@@ -4,23 +4,23 @@
   переключая тему
 */
 :root.theme-dark {
-  --accent-color: #DB00FF;
-  --color-hover: rgba(255, 0, 112, 0.40);
-  --decor-color: #FF0070;
-  --color: #F1B2CE;
+  --accent-color: #db00ff;
+  --color-hover: rgba(255, 0, 112, 0.4);
+  --decor-color: #ff0070;
+  --color: #f1b2ce;
   --background-color: #000028;
-  --accent-background-color: #FF0070;
+  --accent-background-color: #ff0070;
   --background-image: url(../images/cover-image-dark.png);
-  --decorated-text-color: #FF0070;
+  --decorated-text-color: #ff0070;
 }
 
 .page.theme_dark {
-  --accent-color: #DB00FF;
-  --color-hover: rgba(255, 0, 112, 0.40);
-  --decor-color: #FF0070;
-  --color: #F1B2CE;
+  --accent-color: #db00ff;
+  --color-hover: rgba(255, 0, 112, 0.4);
+  --decor-color: #ff0070;
+  --color: #f1b2ce;
   --background-color: #000028;
-  --accent-background-color: #FF0070;
+  --accent-background-color: #ff0070;
   --background-image: url(../images/cover-image-dark.png);
-  --decorated-text-color: #FF0070;
+  --decorated-text-color: #ff0070;
 }

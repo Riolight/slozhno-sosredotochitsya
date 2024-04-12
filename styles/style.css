@@ -287,8 +287,7 @@ span.decor-element::before {
 
   .content__blockquote_quote {
     max-width: 364px;
-}
-
+  }
 }
 
 @media (375px >= width), (375px <= width < 768px) {
@@ -318,9 +317,9 @@ span.decor-element::before {
     margin-inline-start: 0;
   }
 
-.pading {
-  margin-block-end: 20px;
-}
+  .pading {
+    margin-block-end: 20px;
+  }
 
   .content__title {
     grid-template-rows: 36vh 1fr 27vh;
