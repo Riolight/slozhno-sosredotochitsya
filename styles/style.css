@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: var(--main-font, Helvetica, Arial, sans-serif);
+  font-family: var(--main-font), Helvetica, Arial, sans-serif;
   background-color: var(--background-color);
   background-image: var(--background-image);
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
 }
 
 .header {
-min-height: 100vh;
+  min-height: 100vh;
 }
 
 .header__theme-menu-list {
@@ -41,11 +41,11 @@ min-height: 100vh;
   border: 1px solid var(--color-hover);
 }
 
-button:focus {
+.header__theme-menu-button:focus {
   outline: none;
 }
 
-button:focus-visible {
+.header__theme-menu-button:focus-visible {
   border-bottom: 1px solid var(--decor-color);
 }
 
@@ -101,13 +101,8 @@ button:focus-visible {
 .content__title {
   position: relative;
   display: grid;
-  grid-template-rows: 42vh 1fr 49vh;
-  max-height: 100vh;
+  grid-template-rows: 42vh 1fr 41vh;
   margin-block-end: 60px;
-}
-
-.title {
-  grid-row: 2 / 3;
 }
 
 .content__title-decoration {
@@ -120,28 +115,31 @@ button:focus-visible {
 }
 
 .title-decor {
-  margin-block-end: 10px;
   background-color: var(--accent-background-color);
   font-family: inherit;
+  font-size: 18px;
   color: var(--title-color);
 }
 
-.content__blockquote_quote {
+.text {
+  margin-block-start: 10px;
+}
+
+.content__description_text {
   max-width: 491px;
 }
 
-.content__blockquote {
+.content__description {
   display: grid;
   align-items: center;
   justify-items: end;
   margin-inline: 20px;
   margin-block: 0;
   font-weight: bold;
-  grid-row: 3 / 4;
-  margin-block-end: 10vh;
+  margin-block-end: 3vh;
 }
 
-.content__block {
+.content__card {
   display: grid;
   grid-template-columns: minmax(314px, 314px) 2fr;
   align-items: start;
@@ -151,13 +149,13 @@ button:focus-visible {
   margin-block-end: 80px;
 }
 
-.content__block_title {
+.content__card_title {
   color: var(--decor-color);
   font-size: 18px;
   font-weight: bold;
 }
 
-.block_title {
+.card_title {
   margin-block-end: 20px;
 }
 
@@ -166,49 +164,51 @@ button:focus-visible {
 }
 
 .long {
-  grid-row: 1 / 6;
+  grid-row: 1 / 7;
 }
 
-.content__block-column {
+.content__card-column {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.content__block_text {
+.content__card_text {
   display: grid;
   grid-template-columns: 1fr;
   color: var(--color);
 }
 
-.content__block_text .text:not(:last-of-type) {
+.content__card_text .text:not(:last-of-type) {
   margin-block: 0 20px;
 }
 
-.content__block_text .text a {
+.content__card_text .text a {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-background-color);
 }
 
-.content__block_subtitle {
-  font-weight: bold;
-  font-size: 18px;
+.content__card_text .text a:hover {
+  border-bottom: 1px solid var(--color);
 }
 
-.content__block_subtitle-normal {
+.content__card_text .text a:focus {
+  outline: none;
+}
+
+.content__card_text .text a:focus-visible {
+  border: 1px solid var(--color);
+}
+
+.content__card_subtitle-normal {
   font-weight: normal;
   font-size: 18px;
 }
 
-.content__block_title-subtitle {
-  margin-block-end: 20px;
-  font-size: 18px;
-}
-
-.block_gallery {
+.content__gallery {
   margin-inline: 20px;
   margin-block-end: 60px;
 }
 
-.gallery {
+.content__gallery_image {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -256,17 +256,9 @@ img:nth-of-type(5) {
   min-height: 100vh;
 }
 
-.text-shadow {
+.footer .text-shadow {
   text-shadow: 2px 2px 0 var(--accent-background-color);
-}
-
-span.decor-element::after {
-  margin-inline-end: 96%;
-}
-
-span.decor-element::before {
-  inset-block-start: 421%;
-  margin-block-start: 100%;
+  grid-row: 2 / 3;
 }
 
 @media (768px <= width < 1024px) {
@@ -277,19 +269,19 @@ span.decor-element::before {
     margin-inline: 20px;
   }
 
-  .content__block {
+  .content__card {
     grid-template-columns: minmax(236px, 1fr) 2fr;
   }
 
   .content__title {
-    grid-template-rows: 45vh 1fr 36vh;
+    grid-template-rows: 45vh 1fr 44vh;
   }
 
-  .content__block-column {
+  .content__card-column {
     grid-template-columns: 1fr;
   }
 
-  .content__blockquote_quote {
+  .content__description_text {
     max-width: 364px;
   }
 }
@@ -302,22 +294,22 @@ span.decor-element::before {
     margin-inline: 10px;
   }
 
-  .block_title {
+  .card_title {
     margin-block-end: 20px;
   }
 
-  .content__block {
+  .content__card {
     grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
     margin-inline: 10px;
     margin-block-end: 50px;
   }
 
-  .title {
+  .content__title-decoration {
     margin-inline-start: 10px;
     font-size: 116px;
   }
 
-  .footer .title {
+  .footer .content__title-decoration {
     margin-inline-start: 0;
   }
 
@@ -326,15 +318,15 @@ span.decor-element::before {
   }
 
   .content__title {
-    grid-template-rows: 36vh 1fr 27vh;
+    grid-template-rows: 36vh 1fr 34vh;
     margin-block-end: 41px;
   }
 
-  .content__blockquote {
+  .content__description {
     margin-inline: 10px;
   }
 
-  .content__blok-padding:not(:last-of-type) {
+  .content__card-padding:not(:last-of-type) {
     margin-block-end: 50px;
   }
 
@@ -358,12 +350,12 @@ span.decor-element::before {
     inset-block-end: 10px;
   }
 
-  .block_gallery {
+  .content__gallery {
     margin-inline: 10px;
     margin-block-end: 40px;
   }
 
-  .gallery {
+  .content__gallery_image {
     gap: 10px;
     margin-block-start: 10px;
   }
@@ -395,9 +387,5 @@ span.decor-element::before {
   img:nth-of-type(5) {
     grid-column: 1/5;
     grid-row: 5/6;
-  }
-
-  .title-padding-mobile {
-    margin-block-end: 10px;
   }
 }
