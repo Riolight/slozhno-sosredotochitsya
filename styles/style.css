@@ -12,7 +12,8 @@
 }
 
 .header {
-  min-height: 100vh;
+  min-height: 480px;
+  height: 100vh;
 }
 
 .header__theme-menu-list {
@@ -253,7 +254,8 @@ img:nth-of-type(5) {
   grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
-  min-height: 100vh;
+  min-height: 480px;
+  height: 100vh;
 }
 
 .footer .text-shadow {
